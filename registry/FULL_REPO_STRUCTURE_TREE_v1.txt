@@ -1,0 +1,102 @@
+.
+├── 00_GENESIS
+│   ├── declarations
+│   ├── hashes
+│   └── root
+├── 01_CANON
+│   ├── axioms
+│   ├── doctrines
+│   ├── equations
+│   ├── glossary
+│   └── symbols
+├── 02_ENGINES
+│   ├── drift_sentinel
+│   ├── emotional_physics
+│   ├── gensis_core_ai
+│   ├── latency_stabilizer
+│   ├── lce
+│   ├── omnia_core
+│   └── qlce
+├── 03_OMICS
+│   ├── epigenomics
+│   ├── genomics
+│   ├── metabolomics
+│   ├── microbiomics
+│   ├── neuro_omics
+│   ├── proteomics
+│   ├── telemetry
+│   └── transcriptomics
+├── 04_GRID
+│   ├── adjacency
+│   ├── constellation
+│   ├── lattice_maps
+│   ├── nodes_220
+│   └── onyx_grid
+├── 05_GOVERNANCE
+│   ├── audit_flow
+│   ├── consent_registry
+│   ├── governance_gate
+│   ├── justicechain
+│   └── non_coercion
+├── 06_FORENSICS
+│   ├── audit_capsules
+│   ├── chain_of_custody
+│   ├── hash_logs
+│   ├── snapshot_templates
+│   └── templates
+├── 07_VISUAL_SYSTEM
+│   ├── atlas
+│   ├── covers
+│   ├── diagrams
+│   ├── icons
+│   ├── posters
+│   └── visual_bible
+├── 08_PUBLICATION
+│   ├── abstracts
+│   ├── books
+│   ├── citations
+│   ├── submissions
+│   ├── whitepapers
+│   └── zenodo
+├── 09_SIMULATIONS
+│   ├── correction_dynamics
+│   ├── julia
+│   ├── lattice_220
+│   ├── manifolds
+│   ├── python
+│   └── trust_graphs
+├── 10_INFRA
+│   ├── cloudflare
+│   ├── dns
+│   ├── domains
+│   ├── github
+│   ├── google_cloud
+│   └── secrets_quarantine
+├── 99_REGISTRY
+│   ├── master_index
+│   ├── node_registry
+│   ├── script_registry
+│   ├── symbol_registry
+│   └── version_registry
+├── README.md
+├── docs
+│   └── EXPORT_NOTE.md
+├── registry
+│   ├── FULL_REPO_STRUCTURE_TREE_v1.txt
+│   ├── GITHUB_SAFE_EXPORT_MANIFEST_v1.md
+│   ├── MASTER_NODE_REGISTRY_v1.md
+│   ├── PHASE1_STATUS.md
+│   ├── SCRIPT_REGISTRY_v1.md
+│   └── SOVRINT_CANONICAL_INDEX_v1.md
+└── scripts
+    ├── forensics
+    │   ├── sovrint_export_signed_snapshot.sh
+    │   └── sovrint_forensic_audit.sh
+    ├── registry
+    │   └── verify_root.sh
+    ├── security
+    │   └── combined_lockdown.sh
+    └── status
+        └── proof_of_life.sh
+
+87 directories, 13 files
