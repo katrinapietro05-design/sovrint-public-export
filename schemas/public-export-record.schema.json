@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/katrinapietro05-design/sovrint-public-export/schemas/public-export-record.schema.json",
+  "title": "SOVRINT Public Export Record",
+  "type": "object",
+  "required": [
+    "export_id",
+    "title",
+    "author",
+    "classification",
+    "approval_status",
+    "license",
+    "release_date"
+  ],
+  "properties": {
+    "export_id": {
+      "type": "string",
+      "pattern": "^SOVRINT-EXPORT-[0-9]{4}-[0-9]{2}-[0-9]{2}-[0-9]{3,}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "author": {
+      "const": "Katrina Pietroniro"
+    },
+    "classification": {
+      "enum": [
+        "CANONICAL_PUBLIC",
+        "PUBLICATION_SAFE",
+        "SYNTHETIC",
+        "SIMULATED",
+        "OBSERVED_PUBLIC",
+        "EMPIRICAL_PUBLIC",
+        "ARCHIVED_PUBLIC"
+      ]
+    },
+    "approval_status": {
+      "enum": ["APPROVED", "WITHHELD", "REVOKED"]
+    },
+    "license": {
+      "const": "SOVRINT Proprietary License v1.0"
+    },
+    "source_repository": {
+      "type": ["string", "null"]
+    },
+    "source_path": {
+      "type": ["string", "null"]
+    },
+    "release_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "provenance_reviewed": {
+      "type": "boolean"
+    },
+    "privacy_reviewed": {
+      "type": "boolean"
+    },
+    "security_reviewed": {
+      "type": "boolean"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}
