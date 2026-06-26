@@ -1,0 +1,42 @@
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+*.jks
+secrets/
+private/
+credentials/
+
+# Local runtime and internal exports
+runtime/
+telemetry/raw/
+forensics/
+internal/
+unpublished/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node
+node_modules/
+
+# Editors and operating systems
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Temporary and backup files
+*.tmp
+*.bak
+*.swp
+*~
