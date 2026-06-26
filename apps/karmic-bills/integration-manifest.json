@@ -1,15 +1,29 @@
 {
-  "schemaVersion": "1.0.0",
+  "schemaVersion": "1.1.0",
   "id": "sovrint.karmic-bills",
   "name": "Karmic Bills",
-  "version": "1.0.0",
-  "entry": "./index.html",
+  "version": "1.1.0",
+  "entry": "./hub.html",
+  "standaloneEntry": "./index.html",
   "route": "/karmic-bills",
   "navigationLabel": "Karmic Bills",
   "storageAdapter": "browser-local-storage",
   "storageKey": "sovrint.karmic-bills.v1",
-  "preserveExistingRoutes": ["/", "/pathways", "/integrity", "/governance"],
+  "preserveExistingRoutes": ["/", "/pathways", "/integrity", "/governance", "/engage"],
+  "pathways": ["Observe", "Integrate", "Architect", "Elevate", "Steward", "Evolve"],
+  "accessLayer": "Engage",
+  "anchor": "Sovereign point of return",
   "statusLifecycle": ["Draft", "Open", "Acknowledged", "In Repair", "Disputed", "Fulfilled", "Closed", "Archived"],
   "closureFields": ["closureCriteria", "closureStatement", "closureDate"],
-  "features": ["dashboard", "ledger", "people", "evidence", "repair", "timeline", "analytics", "import", "export", "print"]
+  "integrityEngine": {
+    "dimensions": ["truth", "agency", "continuity", "relation", "sovereignty"],
+    "outputs": ["coherence", "contradictions", "evidenceCoverage", "repairCoverage", "correctionPathways"],
+    "snapshotSchema": "sovrint.integrity-snapshot.v1"
+  },
+  "hubBridge": {
+    "global": "window.SOVRINTHubModules",
+    "readyEvent": "sovrint:module-ready",
+    "snapshotEvent": "sovrint:integrity-snapshot"
+  },
+  "features": ["hub-shell", "dashboard", "ledger", "people", "evidence", "repair", "timeline", "analytics", "integrity-engine", "contradiction-watch", "correction-pathways", "import", "export", "print"]
 }

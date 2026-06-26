@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#04101e" />
+  <meta name="description" content="SOVRINT Sovereign Systems Hub integration for Karmic Bills and the Integrity Engine." />
+  <title>SOVRINT™ Hub · Karmic Bills</title>
+  <link rel="stylesheet" href="./hub.css" />
+  <script defer src="./hub.js"></script>
+</head>
+<body>
+  <div class="hub-shell">
+    <header class="hub-header">
+      <div class="brand-lockup" aria-label="SOVRINT Sovereign Systems Hub">
+        <div class="brand-mark" aria-hidden="true">S</div>
+        <div>
+          <p class="brand-name">SOVRINT™</p>
+          <p class="brand-subtitle">Sovereign Systems Hub</p>
+        </div>
+      </div>
+
+      <div class="header-status" aria-live="polite">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span id="hubStatus">Initializing sovereign module</span>
+      </div>
+
+      <div class="header-actions">
+        <button class="button secondary" id="refreshButton" type="button">Refresh integrity</button>
+        <button class="button primary" id="exportIntegrityButton" type="button">Export snapshot</button>
+      </div>
+    </header>
+
+    <nav class="pathway-nav" aria-label="SOVRINT pathways">
+      <button class="pathway anchor active" type="button" data-anchor>Anchor</button>
+      <a class="pathway" href="/pathways#observe">Observe</a>
+      <a class="pathway" href="/pathways#integrate">Integrate</a>
+      <a class="pathway" href="/pathways#architect">Architect</a>
+      <a class="pathway" href="/pathways#elevate">Elevate</a>
+      <a class="pathway" href="/pathways#steward">Steward</a>
+      <a class="pathway" href="/pathways#evolve">Evolve</a>
+      <a class="pathway engage" href="/engage">Engage</a>
+    </nav>
+
+    <main>
+      <section class="hero" id="anchor">
+        <div>
+          <p class="eyebrow">Sovereign accountability infrastructure</p>
+          <h1>Karmic Bills is now mounted inside the SOVRINT Hub.</h1>
+          <p class="hero-copy">The ledger remains the operational record. The Integrity Engine reads its evidence, repair, lineage, relationship, and closure signals to expose coherence, contradiction, and correction pathways without turning human complexity into a punitive score.</p>
+        </div>
+        <div class="hero-meta">
+          <div><span>Module</span><strong>sovrint.karmic-bills</strong></div>
+          <div><span>Route</span><strong>/karmic-bills</strong></div>
+          <div><span>Custody</span><strong id="custodyValue">Local-first</strong></div>
+        </div>
+      </section>
+
+      <section class="integrity-section" aria-labelledby="integrityHeading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Five-dimensional observability</p>
+            <h2 id="integrityHeading">Integrity Engine</h2>
+          </div>
+          <div class="mode-pill" id="dataMode">Awaiting ledger</div>
+        </div>
+
+        <div class="integrity-grid" id="integrityGrid"></div>
+
+        <div class="observatory-grid">
+          <article class="panel summary-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">System coherence</p>
+                <h3>Integrity snapshot</h3>
+              </div>
+              <strong class="coherence-score" id="coherenceScore">0%</strong>
+            </div>
+            <div class="summary-metrics" id="summaryMetrics"></div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Contradiction watch</p>
+                <h3>Signals requiring review</h3>
+              </div>
+              <span class="count-badge" id="contradictionCount">0</span>
+            </div>
+            <div class="signal-list" id="contradictionList"></div>
+          </article>
+
+          <article class="panel span-two">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Correction velocity</p>
+                <h3>Priority pathways</h3>
+              </div>
+              <span class="count-badge" id="pathwayCount">0</span>
+            </div>
+            <div class="correction-list" id="correctionList"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="ledger-section" aria-labelledby="ledgerHeading">
+        <div class="section-heading ledger-heading">
+          <div>
+            <p class="eyebrow">Operational module</p>
+            <h2 id="ledgerHeading">Karmic Ledger</h2>
+          </div>
+          <p>The full ledger remains independently portable while operating as a governed module inside the Hub.</p>
+        </div>
+        <div class="ledger-frame-wrap">
+          <iframe id="ledgerFrame" title="SOVRINT Karmic Bills ledger" src="./index.html" loading="eager"></iframe>
+        </div>
+      </section>
+    </main>
+
+    <footer class="hub-footer">
+      <span>SOVRINT™ · The Architecture of Coherence™</span>
+      <span>Anchor is the sovereign point of return.</span>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
