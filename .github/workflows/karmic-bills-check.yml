@@ -1,0 +1,41 @@
+name: Karmic Bills Check
+
+on:
+  push:
+    branches:
+      - feature/karmic-bills-module
+  pull_request:
+    paths:
+      - "apps/karmic-bills/**"
+      - ".github/workflows/karmic-bills-check.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Validate JavaScript syntax
+        run: node --check apps/karmic-bills/app.js
+
+      - name: Validate required module files
+        run: |
+          test -s apps/karmic-bills/index.html
+          test -s apps/karmic-bills/styles.css
+          test -s apps/karmic-bills/app.js
+          test -s apps/karmic-bills/schema.json
+          test -s apps/karmic-bills/integration-manifest.json
+
+      - name: Validate JSON artifacts
+        run: |
+          node -e "JSON.parse(require('fs').readFileSync('apps/karmic-bills/schema.json', 'utf8'))"
+          node -e "JSON.parse(require('fs').readFileSync('apps/karmic-bills/integration-manifest.json', 'utf8'))"
+
+      - name: Verify local asset references
+        run: |
+          grep -q 'href="./styles.css"' apps/karmic-bills/index.html
+          grep -q 'src="./app.js"' apps/karmic-bills/index.html
