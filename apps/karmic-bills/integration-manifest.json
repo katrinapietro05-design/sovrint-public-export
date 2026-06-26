@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "sovrint.karmic-bills",
+  "name": "Karmic Bills",
+  "version": "1.0.0",
+  "entry": "./index.html",
+  "route": "/karmic-bills",
+  "navigationLabel": "Karmic Bills",
+  "storageAdapter": "browser-local-storage",
+  "storageKey": "sovrint.karmic-bills.v1",
+  "preserveExistingRoutes": ["/", "/pathways", "/integrity", "/governance"],
+  "statusLifecycle": ["Draft", "Open", "Acknowledged", "In Repair", "Disputed", "Fulfilled", "Closed", "Archived"],
+  "closureFields": ["closureCriteria", "closureStatement", "closureDate"],
+  "features": ["dashboard", "ledger", "people", "evidence", "repair", "timeline", "analytics", "import", "export", "print"]
+}
