@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#071526" />
+  <meta name="description" content="SOVRINT Karmic Bills — an auditable ledger for obligations, repair, evidence, lineage, and closure." />
+  <title>SOVRINT™ Karmic Bills</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand-block">
+        <div class="brand-mark" aria-hidden="true">S</div>
+        <div>
+          <strong>SOVRINT™</strong>
+          <span>Karmic Bills</span>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Karmic Bills sections">
+        <button class="nav-link active" data-view="dashboard">Dashboard</button>
+        <button class="nav-link" data-view="ledger">Ledger</button>
+        <button class="nav-link" data-view="people">People & Entities</button>
+        <button class="nav-link" data-view="evidence">Evidence</button>
+        <button class="nav-link" data-view="repair">Repair Plans</button>
+        <button class="nav-link" data-view="timeline">Timeline</button>
+        <button class="nav-link" data-view="analytics">Analytics</button>
+        <button class="nav-link" data-view="documentation">Documentation</button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="freshness">
+          <span class="status-dot"></span>
+          <span id="freshnessText">Local ledger ready</span>
+        </div>
+        <button class="button secondary full" id="exportJsonButton">Export ledger</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="icon-button mobile-only" id="menuButton" aria-label="Open navigation">☰</button>
+        <div>
+          <p class="eyebrow">Sovereign accountability infrastructure</p>
+          <h1 id="viewTitle">Executive Dashboard</h1>
+        </div>
+        <div class="topbar-actions">
+          <button class="button secondary" id="importButton">Import</button>
+          <button class="button primary" id="newBillButton">New karmic bill</button>
+          <input type="file" id="importFile" accept="application/json,.json" hidden />
+        </div>
+      </header>
+
+      <section class="view active" id="dashboardView" data-view-panel="dashboard">
+        <div class="hero-panel">
+          <div>
+            <p class="eyebrow">Decision-ready ledger</p>
+            <h2>Track what remains unresolved. Govern how it is repaired.</h2>
+            <p>Karmic Bills records obligations, exchanges, harms, promises, accountability, evidence, lineage, and closure without collapsing complex realities into a single monetary balance.</p>
+          </div>
+          <div class="hero-actions">
+            <button class="button primary" id="heroNewBillButton">Create record</button>
+            <button class="button secondary" id="printDashboardButton">Print summary</button>
+          </div>
+        </div>
+
+        <div class="metric-grid" id="metricGrid"></div>
+
+        <div class="dashboard-grid">
+          <article class="panel span-2">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Active exposure</p>
+                <h3>Priority ledger</h3>
+              </div>
+              <button class="text-button" data-switch-view="ledger">View all</button>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Record</th><th>Relationship</th><th>Status</th><th>Priority</th><th>Due</th></tr></thead>
+                <tbody id="priorityTableBody"></tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Status distribution</p>
+                <h3>Ledger state</h3>
+              </div>
+            </div>
+            <div id="statusDistribution" class="distribution-list"></div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Repair velocity</p>
+                <h3>Resolution progress</h3>
+              </div>
+            </div>
+            <div id="repairProgress" class="progress-stack"></div>
+          </article>
+
+          <article class="panel span-2">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Observability</p>
+                <h3>Recent changes</h3>
+              </div>
+            </div>
+            <div id="recentChanges" class="timeline-list"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="view" id="ledgerView" data-view-panel="ledger">
+        <div class="toolbar panel">
+          <div class="search-field">
+            <label for="searchInput">Search ledger</label>
+            <input id="searchInput" type="search" placeholder="Title, person, tag, event, evidence…" />
+          </div>
+          <div class="filter-field">
+            <label for="statusFilter">Status</label>
+            <select id="statusFilter"></select>
+          </div>
+          <div class="filter-field">
+            <label for="categoryFilter">Category</label>
+            <select id="categoryFilter"></select>
+          </div>
+          <div class="filter-field">
+            <label for="directionFilter">Direction</label>
+            <select id="directionFilter"></select>
+          </div>
+          <div class="filter-field">
+            <label for="sortFilter">Sort</label>
+            <select id="sortFilter">
+              <option value="updated-desc">Recently updated</option>
+              <option value="priority-desc">Highest priority</option>
+              <option value="due-asc">Due soonest</option>
+              <option value="created-desc">Newest created</option>
+              <option value="title-asc">Title A–Z</option>
+            </select>
+          </div>
+          <button class="button secondary" id="saveViewButton">Save view</button>
+        </div>
+
+        <div class="saved-views" id="savedViews"></div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Canonical records</p>
+              <h3>Ledger</h3>
+            </div>
+            <div class="inline-actions">
+              <button class="button secondary" id="exportCsvButton">Export CSV</button>
+              <button class="button secondary" id="showArchivedButton">Show archived</button>
+            </div>
+          </div>
+          <div id="ledgerCards" class="ledger-cards"></div>
+          <div id="ledgerEmpty" class="empty-state" hidden>
+            <h3>No records match this view</h3>
+            <p>Adjust the filters or create a new karmic bill.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" id="peopleView" data-view-panel="people"><div class="panel"><div class="panel-header"><div><p class="eyebrow">Relational topology</p><h3>People & Entities</h3></div></div><div id="peopleGrid" class="entity-grid"></div></div></section>
+      <section class="view" id="evidenceView" data-view-panel="evidence"><div class="panel"><div class="panel-header"><div><p class="eyebrow">Proof and provenance</p><h3>Evidence register</h3></div></div><div id="evidenceList" class="evidence-list"></div></div></section>
+      <section class="view" id="repairView" data-view-panel="repair"><div class="panel"><div class="panel-header"><div><p class="eyebrow">Accountability in motion</p><h3>Repair plans</h3></div></div><div id="repairList" class="repair-list"></div></div></section>
+      <section class="view" id="timelineView" data-view-panel="timeline"><div class="panel"><div class="panel-header"><div><p class="eyebrow">Immutable change memory</p><h3>Audit timeline</h3></div></div><div id="fullTimeline" class="timeline-list"></div></div></section>
+      <section class="view" id="analyticsView" data-view-panel="analytics"><div class="analytics-grid" id="analyticsGrid"></div></section>
+      <section class="view" id="documentationView" data-view-panel="documentation">
+        <div class="documentation-grid">
+          <article class="panel"><p class="eyebrow">Purpose</p><h3>What a karmic bill is</h3><p>A governed record of an unresolved action, obligation, exchange, harm, promise, responsibility, or repair process. It can hold monetary and non-monetary value simultaneously.</p></article>
+          <article class="panel"><p class="eyebrow">Operating rule</p><h3>Closure requires evidence</h3><p>A record is not closed because attention moved elsewhere. Closure requires explicit criteria, a closure statement, a date, and supporting evidence or acknowledgement.</p></article>
+          <article class="panel"><p class="eyebrow">Status model</p><h3>Lifecycle</h3><p>Draft → Open → Acknowledged → In Repair → Fulfilled → Closed. Disputed and Archived remain governed alternate states, not deletion pathways.</p></article>
+          <article class="panel"><p class="eyebrow">Data custody</p><h3>Local-first persistence</h3><p>This release stores records in the browser for immediate portability. Export regularly. A server-backed adapter can replace local storage when integrated into the Sovereign Systems Hub.</p></article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="billDialog" class="dialog">
+    <form id="billForm" method="dialog">
+      <div class="dialog-header">
+        <div><p class="eyebrow">Governed record</p><h2 id="dialogTitle">New karmic bill</h2></div>
+        <button type="button" class="icon-button" id="closeDialogButton" aria-label="Close">×</button>
+      </div>
+      <input type="hidden" id="billId" />
+      <div class="form-grid">
+        <label class="span-2">Title<input id="title" required maxlength="140" /></label>
+        <label>Category<select id="category" required></select></label>
+        <label>Status<select id="status" required></select></label>
+        <label>Direction<select id="direction" required></select></label>
+        <label>Priority<select id="priority" required><option>Low</option><option>Medium</option><option>High</option><option>Critical</option></select></label>
+        <label class="span-2">Description<textarea id="description" rows="4" required></textarea></label>
+        <label>People or entities<input id="parties" placeholder="Comma-separated" /></label>
+        <label>Relationship<input id="relationship" placeholder="Family, client, institution…" /></label>
+        <label>Originating event<input id="originEvent" /></label>
+        <label>Event date<input id="eventDate" type="date" /></label>
+        <label>Due date<input id="dueDate" type="date" /></label>
+        <label>Accountability owner<input id="owner" /></label>
+        <label>Monetary value<input id="monetaryValue" type="number" min="0" step="0.01" /></label>
+        <label>Currency<input id="currency" value="CAD" maxlength="3" /></label>
+        <label class="span-2">Non-monetary value<textarea id="nonMonetaryValue" rows="2" placeholder="Time, safety, trust, labour, opportunity, care…"></textarea></label>
+        <label>Impact<select id="impact"><option>Low</option><option>Moderate</option><option>High</option><option>Severe</option></select></label>
+        <label>Urgency<select id="urgency"><option>Low</option><option>Moderate</option><option>High</option><option>Immediate</option></select></label>
+        <label class="span-2">Tags<input id="tags" placeholder="Comma-separated" /></label>
+        <label class="span-2">Lineage or source<textarea id="lineage" rows="2"></textarea></label>
+        <label class="span-2">Evidence links<textarea id="evidence" rows="3" placeholder="One item per line"></textarea></label>
+        <label class="span-2">Repair plan<textarea id="repairPlan" rows="3"></textarea></label>
+        <label class="span-2">Repair actions and milestones<textarea id="repairActions" rows="3" placeholder="One action or milestone per line"></textarea></label>
+        <label class="span-2">Acknowledgements<textarea id="acknowledgements" rows="2"></textarea></label>
+        <label class="span-2">Closure criteria<textarea id="closureCriteria" rows="2"></textarea></label>
+        <label class="span-2">Closure statement<textarea id="closureStatement" rows="2"></textarea></label>
+        <label>Closure date<input id="closureDate" type="date" /></label>
+        <label>Linked record IDs<input id="linkedRecords" placeholder="Comma-separated" /></label>
+        <label class="span-2">Notes<textarea id="notes" rows="3"></textarea></label>
+      </div>
+      <div class="dialog-actions">
+        <button type="button" class="button secondary" id="cancelButton">Cancel</button>
+        <button type="submit" class="button primary">Save record</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="detailDialog" class="dialog detail-dialog">
+    <div class="dialog-header">
+      <div><p class="eyebrow">Record detail</p><h2 id="detailTitle"></h2></div>
+      <button type="button" class="icon-button" id="closeDetailButton" aria-label="Close">×</button>
+    </div>
+    <div id="detailContent"></div>
+    <div class="dialog-actions" id="detailActions"></div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="./app.js"></script>
+</body>
+</html>
