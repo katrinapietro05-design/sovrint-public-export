@@ -1,0 +1,187 @@
+registry: MASTER_PROJECT_MARKETPLACE
+system: SOVRINT_Academy
+owner: Katrina_Pietroniro
+status: draft_v0_1
+purpose: Canonical starter project marketplace for fellows, interns, researchers, contributors, mentors, partners, and universities.
+
+review_rules:
+  - no_confidential_access_before_review
+  - no_identity_documents_at_application_stage
+  - classify_scope_before_work_begins
+  - preserve_lineage_and_attribution
+  - public_outputs_require_review
+  - sandbox_outputs_must_be_separated_from_core_material
+
+scope_types:
+  - academic
+  - exploratory
+  - paid
+  - sponsored
+  - research
+
+access_levels:
+  - public_only
+  - sandbox
+  - limited_internal
+  - restricted
+
+projects:
+  - id: PROJECT_001
+    title: SOVRINT Knowledge Graph
+    track: Knowledge Engineering
+    difficulty: Starter
+    access_level: public_only
+    duration: 2-4 weeks
+    expected_outputs:
+      - entity_registry
+      - taxonomy_improvements
+      - relationship_map
+      - glossary_expansion
+    portfolio_value:
+      - semantic_modeling
+      - knowledge_architecture
+      - taxonomy_design
+
+  - id: PROJECT_002
+    title: AI Workflow Library
+    track: AI Workflow Engineering
+    difficulty: Starter
+    access_level: public_only
+    duration: 2-3 weeks
+    expected_outputs:
+      - workflow_templates
+      - orchestration_diagrams
+      - prompt_documentation
+      - qa_checklists
+    portfolio_value:
+      - ai_operations
+      - automation_design
+      - workflow_engineering
+
+  - id: PROJECT_003
+    title: Trust and Governance Control Matrix
+    track: Trust and Risk Systems / Governance and Policy
+    difficulty: Intermediate
+    access_level: public_only
+    duration: 3-5 weeks
+    expected_outputs:
+      - governance_controls
+      - risk_register
+      - trust_model
+      - review_matrix
+    portfolio_value:
+      - governance_design
+      - risk_documentation
+      - trust_systems
+
+  - id: PROJECT_004
+    title: Technical Documentation Sprint
+    track: Technical Documentation
+    difficulty: Starter
+    access_level: public_only
+    duration: 1-3 weeks
+    expected_outputs:
+      - readme_improvements
+      - onboarding_guide
+      - contributor_manual
+      - glossary
+    portfolio_value:
+      - technical_writing
+      - developer_documentation
+      - operational_clarity
+
+  - id: PROJECT_005
+    title: Publication Accelerator
+    track: Research and Publications
+    difficulty: Intermediate
+    access_level: public_only
+    duration: 4-6 weeks
+    expected_outputs:
+      - literature_reviews
+      - citation_maps
+      - evidence_matrix
+      - article_outlines
+    portfolio_value:
+      - research_methods
+      - scientific_communication
+      - evidence_mapping
+
+  - id: PROJECT_006
+    title: Executive Dashboard Observatory
+    track: Systems Architecture
+    difficulty: Advanced
+    access_level: sandbox
+    duration: 4-8 weeks
+    expected_outputs:
+      - kpi_dictionary
+      - dashboard_specification
+      - observability_model
+      - reporting_framework
+    portfolio_value:
+      - enterprise_architecture
+      - observability
+      - analytics_design
+
+  - id: PROJECT_007
+    title: Education Systems Lab
+    track: Education Systems
+    difficulty: Starter
+    access_level: public_only
+    duration: 2-4 weeks
+    expected_outputs:
+      - course_outlines
+      - workshop_plans
+      - learning_pathways
+      - certificate_criteria
+    portfolio_value:
+      - instructional_design
+      - curriculum_architecture
+      - assessment_design
+
+  - id: PROJECT_008
+    title: Data and Geospatial Intelligence Hub
+    track: Data and Geospatial Intelligence
+    difficulty: Advanced
+    access_level: sandbox
+    duration: 4-8 weeks
+    expected_outputs:
+      - data_maps
+      - metadata_standards
+      - spatial_inventory
+      - dashboard_specs
+    portfolio_value:
+      - geospatial_analysis
+      - metadata_design
+      - data_engineering
+
+  - id: PROJECT_009
+    title: Product Experience Studio
+    track: Product Design and UX
+    difficulty: Intermediate
+    access_level: public_only
+    duration: 3-5 weeks
+    expected_outputs:
+      - wireframes
+      - user_journeys
+      - usability_reviews
+      - accessibility_recommendations
+    portfolio_value:
+      - ux_research
+      - product_design
+      - accessibility_review
+
+  - id: PROJECT_010
+    title: Academy Operations Engine
+    track: Systems Architecture / Governance and Policy
+    difficulty: Intermediate
+    access_level: public_only
+    duration: 3-6 weeks
+    expected_outputs:
+      - intake_workflow
+      - registry_automation_plan
+      - partner_lifecycle
+      - review_pipeline
+    portfolio_value:
+      - program_operations
+      - systems_architecture
+      - governance_operations
