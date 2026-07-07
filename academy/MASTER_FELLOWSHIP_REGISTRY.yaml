@@ -1,0 +1,79 @@
+registry: MASTER_FELLOWSHIP_REGISTRY
+system: SOVRINT_Academy
+owner: Katrina_Pietroniro
+status: draft_v0_1
+purpose: Govern candidates, fellows, tracks, projects, outputs, institutions, partners, mentors, and contribution lineage.
+
+tracks:
+  - id: TRACK_AI_WORKFLOW_ENGINEERING
+    name: AI Workflow Engineering
+    output_types: [workflow_maps, agentic_workflows, automation_specs, evaluation_reports]
+  - id: TRACK_TRUST_RISK_SYSTEMS
+    name: Trust and Risk Systems
+    output_types: [risk_maps, governance_controls, threat_models, verification_notes]
+  - id: TRACK_KNOWLEDGE_ENGINEERING
+    name: Knowledge Engineering
+    output_types: [ontologies, taxonomies, registries, knowledge_graph_specs]
+  - id: TRACK_GOVERNANCE_POLICY
+    name: Governance and Policy
+    output_types: [policy_briefs, governance_maps, compliance_notes, accountability_models]
+  - id: TRACK_SYSTEMS_ARCHITECTURE
+    name: Systems Architecture
+    output_types: [architecture_docs, interface_maps, runtime_specs, diagrams]
+  - id: TRACK_RESEARCH_PUBLICATIONS
+    name: Research and Publications
+    output_types: [literature_maps, article_drafts, citation_maps, claim_matrices]
+  - id: TRACK_TECHNICAL_DOCUMENTATION
+    name: Technical Documentation
+    output_types: [readmes, handbooks, contributor_docs, operational_playbooks]
+  - id: TRACK_PRODUCT_UX
+    name: Product Design and UX
+    output_types: [wireframes, journey_maps, prototypes, UI_audits]
+  - id: TRACK_DATA_GEOSPATIAL_INTELLIGENCE
+    name: Data and Geospatial Intelligence
+    output_types: [data_maps, spatial_layers, dashboards, field_models]
+  - id: TRACK_EDUCATION_SYSTEMS
+    name: Education Systems
+    output_types: [course_outlines, learning_paths, assessment_rubrics, workshop_assets]
+
+candidate_statuses:
+  - inquiry
+  - applied
+  - screening
+  - trial_scope
+  - accepted
+  - declined
+  - paused
+
+scope_types:
+  - academic_placement
+  - exploratory_fellowship
+  - volunteer_contribution
+  - paid_contract
+  - research_collaboration
+  - partner_sponsored_fellowship
+
+access_levels:
+  - public_material_only
+  - sandbox_project
+  - reviewed_public_repository
+  - internal_limited
+  - confidential_restricted
+
+review_gates:
+  - intake_complete
+  - identity_not_required_at_intake
+  - portfolio_reviewed
+  - institution_requirement_reviewed
+  - scope_classified
+  - access_level_approved
+  - first_deliverable_reviewed
+  - attribution_confirmed
+  - publication_permission_confirmed
+
+first_pilot:
+  candidate_type: university_intern
+  track_interest: cybersecurity_trust_systems
+  modality: remote
+  status: inquiry
+  next_action: request_resume_university_requirements_duration_portfolio
