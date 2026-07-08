@@ -1,0 +1,26 @@
+{
+  "title": "SOVRINT™ Canonical Registry Spine™: Master Canonical Index, Equation Registry, Symbol Ontology, Engine Registry, Publication Lineage, and Zenodo Release Protocol",
+  "creator": "Katrina Pietroniro",
+  "version": "v1.0",
+  "publication_date": "2026-07-08",
+  "resource_type": "dataset / publication / other",
+  "doi": "TO BE RESERVED IN ZENODO BEFORE FINAL PUBLICATION",
+  "series": "SOVRINT™ Canonical Registry Spine™",
+  "framework": "SOVRINT™",
+  "abstract": "This Zenodo-ready package establishes the second public SOVRINT™ release layer: the canonical registry spine. It provides the Master Canonical Index, Master Equation Registry, Master Symbol Ontology, Master Engine Registry, Publication Lineage Registry, Public / Private Boundary Matrix, rights notice, citation metadata, release protocol, manifest, checksums, and version history required to support future SOVRINT™ publications and demonstrations.",
+  "keywords": [
+    "SOVRINT",
+    "Canonical Registry",
+    "Equation Registry",
+    "Symbol Ontology",
+    "Knowledge Architecture",
+    "Systems Thinking",
+    "Coherence",
+    "Observability",
+    "Zenodo",
+    "DOI",
+    "Publication Lineage"
+  ],
+  "rights": "© 2026 Katrina Pietroniro. All rights reserved unless otherwise stated. SOVRINT™ and related terms are authored framework terms.",
+  "boundary": "Symbolic conceptual framework; not established physical law, clinical instrument, legal conclusion, or validated empirical metric."
+}
