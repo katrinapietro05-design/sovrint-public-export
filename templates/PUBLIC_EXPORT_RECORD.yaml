@@ -1,0 +1,21 @@
+# Public export record template
+# Replace every placeholder with source-verified information before use.
+# This is intentionally incomplete and must not be treated as a release approval.
+# Validate a completed record against ../schemas/public-export-record.schema.json.
+
+export_id: "SOVRINT-EXPORT-YYYY-MM-DD-001"
+title: "REPLACE WITH APPROVED ARTIFACT TITLE"
+author: "Katrina Pietroniro"
+classification: "PUBLICATION_SAFE"
+approval_status: "WITHHELD"
+license: "SOVRINT Proprietary License v1.0"
+source_repository: null
+source_path: null
+release_date: "YYYY-MM-DD"
+provenance_reviewed: false
+privacy_reviewed: false
+security_reviewed: false
+notes: >
+  Template only. Keep approval_status as WITHHELD until public-release review is
+  complete and the owner has approved the exact artifact, source path, date,
+  attribution, provenance, privacy, and security details.
